@@ -10,6 +10,7 @@ namespace _2FebbraioTest
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Ciaot");
         }
     }
 }
