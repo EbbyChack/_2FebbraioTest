@@ -53,6 +53,7 @@ namespace _2FebbraioTest
             }
             else
             {
+                //messaggio di errore nel caso ci fossero errori
                 return "Errore, controllare i dati e riprovare";            
             }
         }

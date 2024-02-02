@@ -26,9 +26,11 @@ namespace _2FebbraioTest
             Console.WriteLine("(gg/mm/aaaa)");
             contribuente1.DataNascita = Console.ReadLine();
 
+            //ToUpper per avere il codice fiscale tutto maiuscolo
             Console.WriteLine("Inserisci codice fiscale: ");
             contribuente1.CodiceFiscale = Console.ReadLine().ToUpper();
 
+            //ToUpper per avere il carattere in maiuscolo
             Console.WriteLine("Inserisci sesso: ");
             Console.WriteLine("(digitare m 0 f)");
             contribuente1.Sesso = Console.ReadLine().ToUpper();
@@ -36,6 +38,7 @@ namespace _2FebbraioTest
             Console.WriteLine("Inserisci comune di residenza: ");
             contribuente1.ComuneResidenza = Console.ReadLine();
 
+            //Convert.ToDecimal per convertire il valore il decimale
             Console.WriteLine("Inserisci redditto annuale: ");
             contribuente1.RedditoAnnuale = Convert.ToDecimal(Console.ReadLine());
 
@@ -60,7 +63,7 @@ namespace _2FebbraioTest
 
   
         }
-
+        //creo un metodo per chiedere all'utente se vuole riavviare o chiudere l'applicazione
         public static void MessaggioFinale()
         {
             Console.WriteLine("Vuoi calcolare l'imposta di un nuovo contribuente?\n Clicca Y\n Altrimenti schiaccia N per chiudere l'applicazione.");
@@ -68,15 +71,18 @@ namespace _2FebbraioTest
 
             if (risp == "Y" || risp == "y")
             {
+                //per pulire la console
                 Console.Clear();
                 InserimentoDati();
             }
             else if (risp == "N" || risp == "n")
             {
+                //per chiudere il terminale
                 Environment.Exit(0);
             }
             else
             {
+                //nel caso l'utente cliccasse un tasto oltre y o n
                 Console.WriteLine("Tasto non valido\n");
                 MessaggioFinale();
             }
