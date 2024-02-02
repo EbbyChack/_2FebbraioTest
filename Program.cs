@@ -10,7 +10,13 @@ namespace _2FebbraioTest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("prova");
+            //messaggio di benvenuto all'avvio del programma
+            Console.WriteLine("Benvenuto sul portale dell'agenzia delle entrate.");
+
+            //richiamo il metodo per chiedere i dati all'utente
+            Operazioni.InserimentoDati();
+
+            Operazioni.StampaRisultati();
         }
     }
 }
