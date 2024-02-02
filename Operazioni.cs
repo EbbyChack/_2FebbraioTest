@@ -14,8 +14,7 @@ namespace _2FebbraioTest
         //creo un metodo per chiedere i dati all'utente
         public static void InserimentoDati() 
         {
-           
-
+       
             //chiedo all'utente i dati necessari
             Console.WriteLine("Inserisci nome: ");
             contribuente1.Nome = Console.ReadLine();
@@ -38,7 +37,12 @@ namespace _2FebbraioTest
             contribuente1.ComuneResidenza = Console.ReadLine();
 
             Console.WriteLine("Inserisci redditto annuale: ");
-            contribuente1.RedditoAnnuale = Convert.ToInt32(Console.ReadLine());
+            contribuente1.RedditoAnnuale = Convert.ToDecimal(Console.ReadLine());
+
+            //chiamo il metodo per stampare i dati
+            StampaRisultati();
+            //chiamo il metodo per mostrare il messaggio
+            MessaggioFinale();
 
         }
 
@@ -52,10 +56,33 @@ namespace _2FebbraioTest
             Console.WriteLine($"codice fiscale: {contribuente1.CodiceFiscale}");
             Console.WriteLine($"redditto dichiarato: {contribuente1.RedditoAnnuale}");
             Console.WriteLine($"IMPOSTA DA VERSARE: {contribuente1.CalcoloImposta()}\n");
-            Console.WriteLine("=======================");
+            Console.WriteLine("=======================\n");
+
+  
+        }
+
+        public static void MessaggioFinale()
+        {
+            Console.WriteLine("Vuoi calcolare l'imposta di un nuovo contribuente?\n Clicca Y\n Altrimenti schiaccia N per chiudere l'applicazione.");
+            var risp = Console.ReadLine();
+
+            if (risp == "Y" || risp == "y")
+            {
+                Console.Clear();
+                InserimentoDati();
+            }
+            else if (risp == "N" || risp == "n")
+            {
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Tasto non valido\n");
+                MessaggioFinale();
+            }
 
 
-            Console.ReadLine(); 
+            Console.ReadLine();
         }
     }
 }

@@ -13,10 +13,9 @@ namespace _2FebbraioTest
             //messaggio di benvenuto all'avvio del programma
             Console.WriteLine("Benvenuto sul portale dell'agenzia delle entrate.");
 
-            //richiamo il metodo per chiedere i dati all'utente
+            //chiamo il metodo per chiedere i dati all'utente
             Operazioni.InserimentoDati();
-
-            Operazioni.StampaRisultati();
+            
         }
     }
 }
